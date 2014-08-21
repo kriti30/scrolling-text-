@@ -1,0 +1,20 @@
+module hello_tb();
+reg clock, reset,btn;
+wire a,b,c,d,e,f,g;
+wire [3:0] en;
+//instantiation of module
+ssevenseg uut( btn,clock,reset,a,b,c,d,e,f,g,en);
+//definition of clock
+initial clock <= 1'b0;
+always #10 clock <= ~clock;
+//assignments of inputs
+initial 
+begin
+reset <= 1'b1;
+reset <= #25 1'b0;
+btn <= 1'b0;
+btn <= #50 1'b1;
+
+end 
+
+ endmodule
